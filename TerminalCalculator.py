@@ -18,6 +18,5 @@ match operation:
     case _:
         operation = input("Please provide a valid input. Again the symbols are + - / *: ")
 
-print("Your Answer is: " + str(answer))
-
 #Outputs the Results
+print("Your Answer is: " + str(answer))

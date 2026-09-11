@@ -10,6 +10,7 @@ label = tk.Label(root, text="Welcome to the Calculator App!")
 label.grid(row=0,column=0, columnspan=4)
 
 #adds all the buttons to the window
+#buttons 1, 2, 3, and divide are all on the first row of the calculator
 button1 = tk.Button(root, text = "1")
 button1.grid(row=1, column=0)
 
@@ -18,6 +19,9 @@ button2.grid(row=1, column=1)
 
 button3 = tk.Button(root, text = "3")
 button3.grid(row=1, column=2)
+
+buttonDivide = tk.Button(root, text = "/")
+buttonDivide.grid(row=1, column=4)
 
 
 
