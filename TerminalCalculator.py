@@ -17,6 +17,10 @@ match operation:
         answer = firstNum * secondNum
     case _:
         operation = input("Please provide a valid input. Again the symbols are + - / *: ")
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 52080a38f4344febb9c908eaf5208d025291ad92
 #Outputs the Results
 print("Your Answer is: " + str(answer))
