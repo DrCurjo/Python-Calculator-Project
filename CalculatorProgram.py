@@ -13,11 +13,26 @@ label.grid(row=0,column=0, columnspan=4)
 
 entry = tk.Entry(root, width=35, borderwidth=5)
 entry.grid(row=1, column=0, columnspan=4)
+entry.config(state="readonly")
+
 
 #allows the buttons to add to the entry box when clicked
 def add_text(input):
+    entry.config(state = "normal")
     entry.insert(tk.END, input)
+    entry.config(state = "readonly")
 
+def solve():
+    result = eval(entry.get())
+    entry.config(state = "normal")
+    entry.delete(0, tk.END)
+    entry.insert(tk.END, result)
+    entry.config(state = "readonly")
+
+def clear():
+    entry.config(state = "normal")
+    entry.delete(0, tk.END)
+    entry.config(state = "readonly")
 #adds all the buttons to the window
 
 #Calculator Row 2 Buttons
@@ -60,10 +75,14 @@ buttonSubtract = tk.Button(root, text = "-", command=lambda: add_text("-"))
 buttonSubtract.grid(row=4, column=4)
 
 #Calculator Row 5 Buttons
+
+buttonClear = tk.Button(root, text = "Clear", command = lambda:clear())
+buttonClear.grid(row=5, column=0)
+
 button0 = tk.Button(root, text = "0", command=lambda: add_text("0"))
 button0.grid(row=5, column=1)
 
-buttonEquals = tk.Button(root, text = "=", command=lambda: add_text("="))
+buttonEquals = tk.Button(root, text = "=", command=lambda: solve())
 buttonEquals.grid(row=5, column=2)
 
 buttonAdd = tk.Button(root, text = "+", command=lambda: add_text("+"))
